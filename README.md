@@ -28,4 +28,5 @@ Use `go test` to run all tests
 
 ## License
 
-This project is licensed under MIT License - see [LICENSE.md](LICENSE.md) file for details
+This project is licensed under MIT License - see [LICENSE](LICENSE) file for
+details
