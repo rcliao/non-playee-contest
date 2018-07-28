@@ -11,6 +11,7 @@ import (
 func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/hello", web.Hello()).Methods("GET")
+	r.HandleFunc("/", web.Index()).Methods("GET")
 
 	log.Println("Running web server at port 9000")
 	http.ListenAndServe(":9000", r)
