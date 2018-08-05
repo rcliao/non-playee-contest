@@ -2,6 +2,9 @@ package contest
 
 import "fmt"
 
+// Environment represents a overall problem for Agents to play with.
+// It needs to receives input from agents and process inputs to change its
+// internal state
 type Environment interface {
 	Start(config string) error
 	Turn(input []string) (string, error)
@@ -9,11 +12,13 @@ type Environment interface {
 	IsEnded() bool
 }
 
+// Agent represents individual submission from the user
 type Agent interface {
 	Start(config string) error
 	Turn(input string) (string, error)
 }
 
+// Manage is the top level life cycle between environment and its agents
 func Manage(environment Environment, agents []Agent) {
 	for environment.IsEnded() {
 		state := environment.GetState()
